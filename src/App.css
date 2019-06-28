@@ -1,0 +1,63 @@
+/***
+Style Guide Colours
+
+#081b23 - dark blue
+#01d277 - teal
+#e3f4fc - off white
+
+***/
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #081b23;
+  color: #e3f4fc;
+}
+
+.mdb-app {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 { 
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+input {
+  padding: 15px;
+  border-radius: 30px;
+  border-width: 0px;
+  border: 2px solid rgba(255,255,255,0);
+  transition: 0.5s all;
+  color: #01d277;
+}
+
+input:focus {
+  border: 2px solid #01d277;
+  outline: 0;
+}
+
+input::placeholder {
+  color: #01d277;
+}
