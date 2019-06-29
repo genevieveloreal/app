@@ -14,7 +14,6 @@ body {
 }
 
 .mdb-app {
-  text-align: center;
   font-family: 'Montserrat', sans-serif;
   max-width: 1400px;
   margin: 0 auto;
@@ -60,4 +59,18 @@ input:focus {
 
 input::placeholder {
   color: #01d277;
+}
+
+.mdb-app__header {
+  text-align: center;
+  padding: 40px;
+}
+
+.mdb-app__catalogue-container {
+  margin-top: 40px;
+}
+
+.mdb-app__catalogue-item-container {
+  max-width: 250px;
+  margin: 0 auto;
 }

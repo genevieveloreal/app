@@ -4,26 +4,25 @@ import './App.css';
 
 let baseClass = "mdb-app";
 let apiKey = "6ed12e064b90ae1290fa326ce9e790ff";
-let movieResults = [];
+let searchResults = [];
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // error: null,
-      // isLoaded: false,
-      movieResults: []
+      searchResults: []
     };
   }
 
   componentDidMount() {
-    var movieQuery = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key="
-    var movieString = movieQuery.concat(apiKey);
+    const self = this;
+    const movieQuery = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key="
+    const movieString = movieQuery.concat(apiKey);
     fetch(movieString)
       .then(res => res.json())
       .then(function(data) {
-        movieResults = data.results;
-        console.log(movieResults);
+        searchResults = data.results;
+        self.setState({ searchResults: searchResults });
       })
       .catch(error => console.log('Error is ', error));
   }
@@ -33,15 +32,37 @@ class App extends React.Component {
       <div className={baseClass}>
         <header className={`${baseClass}__header`}>
           <h1>The Movie DB</h1>
+          <form className={`${baseClass}__search-form`}>
+            <input 
+              className={`${baseClass}__search-input`}
+              placeholder="Search"
+            >
+            </input>
+          </form>
         </header>
-        <form className={`${baseClass}__search-form`}>
-          <input 
-            className={`${baseClass}__search-input`}
-            placeholder="Search"
-          >
-          </input>
-        </form>
-        <div className={`${baseClass}__movie-container`}>
+        <div className={`${baseClass}__catalogue-container container`}>
+          <h3>Popular Movies</h3>
+          <div className="row">
+            { this.state.searchResults.length > 1 &&
+              <>
+                {searchResults.map((searchResult, index) =>
+                  <div className={`${baseClass}__catalogue-item-container`} key={index}>
+                    <img 
+                      src={`https://image.tmdb.org/t/p/w500/${searchResult.poster_path}`}
+                      className="img-fluid"
+                    >
+                    </img>
+                    <h5>{searchResult.original_title}</h5>
+                    <p>{searchResult.release_date}</p>
+                    <p>{searchResult.vote_average * 10}%</p>
+                  </div>
+                )}
+              </>
+            }
+          </div>
+          { this.state.searchResults.length > 1 &&
+            console.log(this.state.searchResults)
+          }
         </div>
       </div>
     )
