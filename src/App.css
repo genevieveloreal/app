@@ -43,6 +43,11 @@ h6 {
   font-size: 12px;
 }
 
+p {
+  display: block;
+  width: 100%;
+}
+
 input {
   padding: 15px;
   border-radius: 30px;
@@ -71,6 +76,7 @@ input::placeholder {
 }
 
 .mdb-app__catalogue-item-container {
+  width: 250px;
   max-width: 250px;
   margin: 0 auto;
 }
