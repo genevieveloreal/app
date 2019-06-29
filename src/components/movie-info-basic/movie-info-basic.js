@@ -13,11 +13,12 @@ class MovieInfoBasic extends React.Component {
     let mins = durationMins % 60;
     hours = hours < 10 ? '0' + hours : hours;
     mins = mins < 10 ? '0' + mins : mins;
+    hours = parseInt(hours, 10);
     /* End duration in hours and minutes */
     return (
       <div className={baseClass}>
         <p>{releaseYear} - {voteAverage}% User Score</p>
-        <p>{hours}h {mins}m</p>
+        <p>{hours > 0 ? `${hours}h` : ''} {mins}m</p>
       </div>
     )
   }

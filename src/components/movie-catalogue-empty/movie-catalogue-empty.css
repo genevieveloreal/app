@@ -1,0 +1,19 @@
+.mdb-movie-catalogue-empty {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .mdb-movie-catalogue-empty__inner {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  
+  .mdb-movie-catalogue-empty__inner img {
+    width: 100%;
+    padding: 15px 0;
+  }
+  
+  .mdb-movie-catalogue-empty__inner h3 {
+    color: #01d277;
+    margin-bottom: 0px;
+  }

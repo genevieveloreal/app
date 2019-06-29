@@ -1,0 +1,83 @@
+.mdb-movie-card {
+    margin: 0 auto;
+    position: relative;
+}
+
+a.mdb-movie-link {
+    color: #e3f4fc;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+a.mdb-movie-link:hover  {
+    text-decoration: none;
+}
+
+.mdb-movie-card__image {
+    border-radius: 8px;
+    height: 450px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.mdb-movie-card__details {
+    padding-top: 15px;
+}
+
+.mdb-movie-card .mdb-movie-rating-percentage {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.mdb-movie-card h5 {
+    color: #E6F7FF;
+    font-family: 'Roboto', sans-serif;
+}
+
+.mdb-movie-card p {
+    font-size: 12px;
+    color: #A1D1E6;
+}
+
+@media (max-width: 768px) {
+    .mdb-movie-card__image {
+        height: 360px;
+    }
+}
+
+@media (max-width: 576px) {
+    .mdb-movie-card__image {
+        height: 330px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mdb-movie-card__image {
+        height: 300px;
+    }
+}
+
+@media (max-width: 420px) {
+    .mdb-movie-card__image {
+        height: 240px;
+    }
+}
+
+@media (max-width: 410px) {
+    .mdb-movie-card__image {
+        height: 450px;
+    }
+}
+
+@media (max-width: 330px) {
+    .mdb-movie-card__image {
+        height: 425px;
+    }
+}
+

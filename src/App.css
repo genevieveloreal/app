@@ -10,15 +10,31 @@ Style Guide Colours
 ***/
 
 body {
-  font-family: 'Montserrat', sans-serif;
   background: #081b23;
   color: #e3f4fc;
+  font-family: 'Roboto', sans-serif;
 }
 
 .mdb-app {
   font-family: 'Montserrat', sans-serif;
   max-width: 1400px;
   margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #E3F4FC;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1.bold,
+h2.bold,
+h3.bold {
+  font-weight: 700;
 }
 
 h1 {
@@ -38,7 +54,7 @@ h4 {
 }
 
 h5 {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 h6 {
@@ -48,6 +64,7 @@ h6 {
 p {
   display: block;
   width: 100%;
+  font-family: 'Roboto', sans-serif;
 }
 
 input {
@@ -56,9 +73,14 @@ input {
   border-width: 0px;
   border: 2px solid rgba(255,255,255,0);
   transition: 0.5s all;
+  height: 44px;
+  font-size: 14px;
+  font-weight: 500;
   color: #01d277;
+  font-family: 'Roboto', sans-serif;
 }
 
+input:hover,
 input:focus {
   border: 2px solid #01d277;
   outline: 0;
@@ -67,46 +89,54 @@ input:focus {
 input::placeholder {
   color: #01d277;
 }
-
-.mdb-app__header {
-  text-align: center;
-  padding: 40px;
-}
-
-.mdb-app__catalogue-container {
-  margin-top: 40px;
-}
-
-.mdb-app__catalogue-item-container {
-  width: 250px;
-  max-width: 250px;
-  margin: 0 auto;
+.mdb-app__search-input-container,
+input.mdb-app__search-input {
+  width: 342px;
   position: relative;
-}
-
-.mdb-app__catalogue-item-container img {
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
-}
-
-.mdb-app__catalogue-empty {
-  width: 100%;
-  text-align: center;
-}
-
-.mdb-app__catalogue-empty-inner {
-  max-width: 450px;
   margin: 0 auto;
 }
 
-.mdb-app__catalogue-empty-inner img {
-  width: 100%;
-  padding: 15px 0;
+.mdb-app__search-input-icon {
+  position: absolute;
+  z-index: 1;
+  top: 15px;
+  right: 15px;
+  transition: 0.3s all;
+  opacity: 1;
 }
 
-.mdb-app__catalogue-empty h3 {
-  color: #01d277;
-  margin-bottom: 0px;
+.mdb-app__search-input-container:hover .mdb-app__search-input-icon {
+  right: 5px;
+  opacity: 0;
+}
+
+@media (max-width: 375px) {
+  .mdb-app__search-input-container {
+    width: 90%;
+  }
+
+  input.mdb-app__search-input {
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+
+@media (min-width: 1199px) {
+  .mdb-app__catalogue-container h3 {
+    margin-left: 30px;
+  }  
+}
+
+@media (max-width: 576px) {
+  .col-xs-6 {
+    width: 50%!important;
+  }
+}
+
+@media (max-width: 410px) {
+  .col-xs-6 {
+    width: 100%!important;
+  }
 }
 
 /** 

@@ -1,0 +1,10 @@
+.mdb-hero-header {
+    text-align: center;
+    padding: 60px 0 40px 0;
+    background: radial-gradient(312.01px at 53.46% -21.35%, rgba(5, 112, 172, 0.46) 0%, rgba(8, 27, 35, 0) 100%);
+}
+
+img.mdb-hero-header__logo {
+    max-width: 66px;
+    margin-bottom: 50px;
+  }

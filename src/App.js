@@ -1,7 +1,9 @@
 import React from 'react';
+import HeroHeader from './components/hero-header/hero-header';
+import MovieCard from './components/movie-card/movie-card';
+import MovieCatalogueEmpty from './components/movie-catalogue-empty/movie-catalogue-empty';
+import SearchIcon from './search_icon.png';
 import './App.css';
-import Kansas from '../src/kansas.gif';
-import MovieRatingPercentage from './components/movie-rating-percentage/movie-rating-percentage';
 
 const baseClass = "mdb-app";
 const apiKey = "&api_key=6ed12e064b90ae1290fa326ce9e790ff";
@@ -61,55 +63,53 @@ class App extends React.Component {
   render() {
     return (
       <div className={baseClass}>
-        <header className={`${baseClass}__header`}>
-          <h1>The Movie DB</h1>
-          <form className={`${baseClass}__search-form`}>
+
+        <HeroHeader>
+          <div className={`${baseClass}__search-input-container`}>
+            <img 
+              className={`${baseClass}__search-input-icon`}
+              src={SearchIcon}
+              alt="search icon"
+            />
             <input 
               onKeyUp={this.handleSearch}
               className={`${baseClass}__search-input`}
               placeholder={this.state.previousSearch ? this.state.previousSearch : 'Search'}
             >
             </input>
-          </form>
-        </header>
+          </div>
+        </HeroHeader>
+
         <div className={`${baseClass}__catalogue-container container`}>
-          <h3>Popular Movies</h3>
+          <h3 className="bold">
+            {this.state.searchResults ? 'Search results' : 'Popular Movies'}
+          </h3>
           <div className="row">
+
+            {/* Start search results
+            If search results are returned, loop through results
+            and if no search results returned, render empty catalogue message
+            */}
             { this.state.searchResults && this.state.searchResults.length > 0 ?
               <>
                 {searchResults.map((searchResult, index) =>
-                  <div className="col-lg-4 col-sm-6 col-xs-12" key={index}>
-                    <div className={`${baseClass}__catalogue-item-container`}>
-                      <div className={`${baseClass}__catalogue-image-container`}>
-                        <MovieRatingPercentage movieRating={searchResult.vote_average}/>
-                        <a href={`/movie/${searchResult.id}`} id={searchResult.id}>
-                          <img 
-                            alt={searchResult.original_title}
-                            src={`https://image.tmdb.org/t/p/w500/${searchResult.poster_path}`}
-                            className="img-fluid"
-                          >
-                          </img>
-                        </a>
-                      </div>
-                      <h5>{searchResult.original_title}</h5>
-                      <p>{searchResult.release_date}</p>
-                    </div>
+                  <div className="col-lg-4 col-sm-6 col-xs-6" key={index}>
+                      <MovieCard
+                        movieTitle={searchResult.title}
+                        image={searchResult.poster_path}
+                        movieRating={searchResult.vote_average}
+                        releaseDate={searchResult.release_date}
+                        id={searchResult.id}
+                      />
                   </div>
                 )}
               </>
               :
-              <div className={`${baseClass}__catalogue-empty`}>
-                <div className={`${baseClass}__catalogue-empty-inner`}>
-                  <h3>I've a feeling we're not in Kansas anymore...</h3>
-                  <img className="img-fluid" src={Kansas}></img>
-                  <p>Try another search term to find your favourite movie.</p>
-                </div>
-              </div>
+              <MovieCatalogueEmpty/>
             }
+            {/* End Search Results */}
+
           </div>
-          { this.state.searchResults &&
-            console.log(this.state.searchResults)
-          }
         </div>
       </div>
     )
