@@ -38,6 +38,7 @@ a.mdb-movie-link:hover  {
 .mdb-movie-card h5 {
     color: #E6F7FF;
     font-family: 'Roboto', sans-serif;
+    margin-bottom: 5px;
 }
 
 .mdb-movie-card p {

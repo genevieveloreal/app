@@ -2,6 +2,7 @@ import React from 'react';
 import HeroHeader from './components/hero-header/hero-header';
 import MovieCard from './components/movie-card/movie-card';
 import MovieCatalogueEmpty from './components/movie-catalogue-empty/movie-catalogue-empty';
+import Footer from './components/footer/footer';
 import SearchIcon from './search_icon.png';
 import './App.css';
 
@@ -110,6 +111,7 @@ class App extends React.Component {
             {/* End Search Results */}
 
           </div>
+          <Footer/>
         </div>
       </div>
     )
