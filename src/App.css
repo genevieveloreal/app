@@ -3,6 +3,8 @@ Style Guide Colours
 
 #081b23 - dark blue
 #01d277 - teal
+#D1225B - pink
+#4902A3 - purple
 #e3f4fc - off white
 
 ***/
@@ -79,6 +81,12 @@ input::placeholder {
   width: 250px;
   max-width: 250px;
   margin: 0 auto;
+  position: relative;
+}
+
+.mdb-app__catalogue-item-container img {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
 }
 
 .mdb-app__catalogue-empty {
@@ -100,3 +108,13 @@ input::placeholder {
   color: #01d277;
   margin-bottom: 0px;
 }
+
+/** 
+Search input font size is 14px - font weight 500
+Popular movies font size 20px
+Movie title is 14px
+Movie date is 12px
+Percentage font size is 12px
+Border radius on rating is 8px
+Width on percentage is 40px
+**/

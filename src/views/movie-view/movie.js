@@ -1,6 +1,11 @@
 import React from 'react'
+import MovieHeader from '../../components/movie-header/movie-header';
+import MoviePoster from '../../components/movie-poster/movie-poster';
+import MovieInfoBasic from '../../components/movie-info-basic/movie-info-basic';
+import MovieOverview from '../../components/movie-overview/movie-overview';
 import './movie-view.css';
 
+const baseClass = "mdb-single-view";
 const apiKey = "api_key=6ed12e064b90ae1290fa326ce9e790ff";
 let searchResults = [];
 let searchQuery = "http://api.themoviedb.org/3/movie/"
@@ -8,6 +13,7 @@ let searchQuery = "http://api.themoviedb.org/3/movie/"
 class Movie extends React.Component {
   constructor(props) {
     super(props);
+    this.navigateBack = this.navigateBack.bind(this);
     this.state = {
       searchResults: null
     };
@@ -32,12 +38,30 @@ class Movie extends React.Component {
     .catch(error => console.log('Error is ', error));
   }
 
+  navigateBack(){
+    this.props.history.goBack();
+  }
+
   render() {
     return (
-      <div>
-        <h1>Test</h1>
+      <div className={baseClass}>
         { this.state.searchResults && 
-          <p>{searchResults.original_title}</p>
+          <div className="container">
+            <button onClick={this.navigateBack}>Go Back</button>
+            <MovieHeader background={searchResults.backdrop_path}/>
+            <MoviePoster background={searchResults.poster_path}/>
+            <h2>{searchResults.original_title}</h2>
+            <MovieInfoBasic 
+              releaseDate={searchResults.release_date}
+              userRating={searchResults.vote_average}
+              duration={searchResults.runtime}
+            />
+            <hr></hr>
+            <MovieOverview content={searchResults.overview}/>
+          </div>
+        }
+        { this.state.searchResults && 
+          console.log(this.state.searchResults)
         }
       </div>
     )

@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Kansas from '../src/kansas.gif';
+import MovieRatingPercentage from './components/movie-rating-percentage/movie-rating-percentage';
 
 const baseClass = "mdb-app";
 const apiKey = "&api_key=6ed12e064b90ae1290fa326ce9e790ff";
@@ -12,18 +13,24 @@ class App extends React.Component {
     super(props);
     this.state = {
       searchResults: [],
-      searchTerm: ''
+      searchTerm: '',
+      previousSearch: ''
     };
     this.handleSearch = this.handleSearch.bind(this);
   }
 
   componentDidMount() {
-    let apiRequest = searchQuery.concat(apiKey);
     let previousSearch = localStorage.getItem('searchquery');
+    let apiRequest = '';
     if (previousSearch) {
-      console.log(previousSearch);
+      searchQuery = `https://api.themoviedb.org/3/search/movie?query=${previousSearch}`;
+      apiRequest = searchQuery.concat(apiKey);
+      this.setState({
+        searchTerm: previousSearch,
+        previousSearch: previousSearch
+      });
     } else {
-      console.log('No prior search');
+      apiRequest = searchQuery.concat(apiKey);
     }
     this.fetchData(apiRequest);
   }
@@ -33,6 +40,9 @@ class App extends React.Component {
     this.setState({searchTerm: updatedSearchQueryString});
     searchQuery = `https://api.themoviedb.org/3/search/movie?query=${updatedSearchQueryString}`;
     localStorage.setItem("searchquery", updatedSearchQueryString);
+    this.setState({
+      previousSearch: updatedSearchQueryString
+    });
     let apiRequest = searchQuery.concat(apiKey);
     this.fetchData(apiRequest);
   }
@@ -57,7 +67,7 @@ class App extends React.Component {
             <input 
               onKeyUp={this.handleSearch}
               className={`${baseClass}__search-input`}
-              placeholder="Search"
+              placeholder={this.state.previousSearch ? this.state.previousSearch : 'Search'}
             >
             </input>
           </form>
@@ -71,6 +81,7 @@ class App extends React.Component {
                   <div className="col-lg-4 col-sm-6 col-xs-12" key={index}>
                     <div className={`${baseClass}__catalogue-item-container`}>
                       <div className={`${baseClass}__catalogue-image-container`}>
+                        <MovieRatingPercentage movieRating={searchResult.vote_average}/>
                         <a href={`/movie/${searchResult.id}`} id={searchResult.id}>
                           <img 
                             alt={searchResult.original_title}
@@ -82,7 +93,6 @@ class App extends React.Component {
                       </div>
                       <h5>{searchResult.original_title}</h5>
                       <p>{searchResult.release_date}</p>
-                      <p>{searchResult.vote_average * 10}%</p>
                     </div>
                   </div>
                 )}

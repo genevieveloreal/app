@@ -1,0 +1,19 @@
+.mdb-movie-rating-percentage {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 12px;
+    width: 40px;
+    border-radius: 8px;
+    background-color: #01d277;
+    text-align: center;
+    font-weight: 700;
+}
+
+.mdb-movie-rating-percentage.pink {
+    background-color: #D1225B
+}
+
+.mdb-movie-rating-percentage.purple {
+    background-color: #4902A3
+}
