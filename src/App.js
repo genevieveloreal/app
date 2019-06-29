@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Kansas from '../src/kansas.gif';
 
 const baseClass = "mdb-app";
 const apiKey = "&api_key=6ed12e064b90ae1290fa326ce9e790ff";
@@ -77,11 +78,13 @@ class App extends React.Component {
                 )}
               </>
               :
-              <>
-                <p>I've a feeling we're not in Kansas anymore...</p>
-                <br/>
-                <p>Try another search term to find your favourite movie.</p>
-              </>
+              <div className={`${baseClass}__catalogue-empty`}>
+                <div className={`${baseClass}__catalogue-empty-inner`}>
+                  <h3>I've a feeling we're not in Kansas anymore...</h3>
+                  <img className="img-fluid" src={Kansas}></img>
+                  <p>Try another search term to find your favourite movie.</p>
+                </div>
+              </div>
             }
           </div>
           { this.state.searchResults &&

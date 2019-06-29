@@ -80,3 +80,23 @@ input::placeholder {
   max-width: 250px;
   margin: 0 auto;
 }
+
+.mdb-app__catalogue-empty {
+  width: 100%;
+  text-align: center;
+}
+
+.mdb-app__catalogue-empty-inner {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.mdb-app__catalogue-empty-inner img {
+  width: 100%;
+  padding: 15px 0;
+}
+
+.mdb-app__catalogue-empty h3 {
+  color: #01d277;
+  margin-bottom: 0px;
+}
