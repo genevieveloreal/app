@@ -1,3 +1,66 @@
 .mdb-single-view hr {
-    border-top: 1px solid rgba(255,255,255,0.5);
+    border-top: 1px solid #0F303D;
+    margin: 25px 20px;
+}
+
+.mdb-single-view .container {
+    position: relative;
+}
+
+.mdb-single-view .mdb-movie-poster {
+    position: absolute;
+    top: 180px;
+    left: 45px;
+}
+
+.mdb-single-view__header-details {
+    width: 100%;
+}
+
+.mdb-single-view__header-info {
+    margin-left: 200px;
+    padding-top: 30px;
+    padding-right: 15px;
+    margin-bottom: 70px;
+}
+
+.mdb-single-view .mdb-movie-overview {
+    padding: 0 35px;
+}
+
+@media (max-width: 992px) {
+    .mdb-single-view__header-info {
+        margin-bottom: 40px;
+    }
+
+    .mdb-single-view__header-info {
+        margin-left: 185px;
+    }
+}
+
+@media (max-width: 576px) {
+    .mdb-single-view .mdb-movie-overview {
+        padding: 0 20px;
+    }
+
+    .mdb-single-view .container {
+        padding: 0px;
+    }
+
+    .mdb-single-view .mdb-movie-poster {
+        left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mdb-single-view__header-info {
+        margin-left: 180px;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 375px) {
+    .mdb-single-view__header-info h2 {
+        font-size: 20px;
+    }
 }

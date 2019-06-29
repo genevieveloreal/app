@@ -8,7 +8,7 @@ class Footer extends React.Component {
     return (
         <div className={baseClass}>
             <p>Code by Gen C.</p>
-            <p>This product uses the <a href="https://www.themoviedb.org" target="_blank">TMDb API</a> but is not endorsed or certified by TMDb.</p>
+            <p>This product uses the <a href="https://www.themoviedb.org">TMDb API</a> but is not endorsed or certified by TMDb.</p>
         </div>
         )
   }

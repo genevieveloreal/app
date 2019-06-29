@@ -7,7 +7,7 @@ import SearchIcon from './search_icon.png';
 import './App.css';
 
 const baseClass = "mdb-app";
-const apiKey = "&api_key=6ed12e064b90ae1290fa326ce9e790ff";
+const apiKey = "&api_key=" + process.env.REACT_APP_MOVIE_DB_API_KEY;
 let searchResults = [];
 let searchQuery = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc";
 

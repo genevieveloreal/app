@@ -7,7 +7,7 @@ class MovieOverview extends React.Component {
   render() {
     return (
       <div className={baseClass}>
-          <h3>Overview</h3>
+          <h3 className="bold">Overview</h3>
           <div className={`${baseClass}__inner`}>
             {this.props.content}
           </div>

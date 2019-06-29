@@ -121,6 +121,10 @@ input.mdb-app__search-input {
   }
 }
 
+.mdb-app__catalogue-container h3 {
+  margin-bottom: 20px;
+}
+
 @media (min-width: 1199px) {
   .mdb-app__catalogue-container h3 {
     margin-left: 30px;
@@ -139,12 +143,25 @@ input.mdb-app__search-input {
   }
 }
 
-/** 
-Search input font size is 14px - font weight 500
-Popular movies font size 20px
-Movie title is 14px
-Movie date is 12px
-Percentage font size is 12px
-Border radius on rating is 8px
-Width on percentage is 40px
-**/
+button.mdb-back-button {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  border-width: 0px;
+  top: 25px;
+  left: 25px;
+  font-size: 0px;
+  background-color: rgba(255,255,255,0);
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  transition: 0.2s all;
+}
+
+button.mdb-back-button:hover {
+  background-color: #01d277;
+}
+
+button.mdb-back-button:focus {
+  outline: 0;
+}
