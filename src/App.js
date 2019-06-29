@@ -19,6 +19,12 @@ class App extends React.Component {
 
   componentDidMount() {
     let apiRequest = searchQuery.concat(apiKey);
+    let previousSearch = localStorage.getItem('searchquery');
+    if (previousSearch) {
+      console.log(previousSearch);
+    } else {
+      console.log('No prior search');
+    }
     this.fetchData(apiRequest);
   }
 
@@ -26,6 +32,7 @@ class App extends React.Component {
     let updatedSearchQueryString = event.target.value;
     this.setState({searchTerm: updatedSearchQueryString});
     searchQuery = `https://api.themoviedb.org/3/search/movie?query=${updatedSearchQueryString}`;
+    localStorage.setItem("searchquery", updatedSearchQueryString);
     let apiRequest = searchQuery.concat(apiKey);
     this.fetchData(apiRequest);
   }
@@ -64,11 +71,14 @@ class App extends React.Component {
                   <div className="col-lg-4 col-sm-6 col-xs-12" key={index}>
                     <div className={`${baseClass}__catalogue-item-container`}>
                       <div className={`${baseClass}__catalogue-image-container`}>
-                        <img 
-                          src={`https://image.tmdb.org/t/p/w500/${searchResult.poster_path}`}
-                          className="img-fluid"
-                        >
-                        </img>
+                        <a href={`/movie/${searchResult.id}`} id={searchResult.id}>
+                          <img 
+                            alt={searchResult.original_title}
+                            src={`https://image.tmdb.org/t/p/w500/${searchResult.poster_path}`}
+                            className="img-fluid"
+                          >
+                          </img>
+                        </a>
                       </div>
                       <h5>{searchResult.original_title}</h5>
                       <p>{searchResult.release_date}</p>

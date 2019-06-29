@@ -1,17 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import { Route, BrowserRouter as Router } from 'react-router-dom'
 import './index.css'
-import App from './App'
-import MovieView from './views/movie-view/movie-view'
-import OtherView from './views/other-view/other-view'
+import app from './App'
+import MovieView from './views/movie-view/movie'
 
 const routing = (
     <Router>
         <div>
-            <Route exact path="/" component={App} />
-            <Route path="/movie-view" component={MovieView} />
-            <Route path="/other-view" component={OtherView} />
+            <Route exact path="/" component={app} />
+            <Route path="/movie" component={MovieView} />
         </div>
     </Router>
 )
