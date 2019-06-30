@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/app/static/css/main.4b64f5dc.chunk.css",
+    "main.js": "/app/static/js/main.8bd8ac26.chunk.js",
+    "main.js.map": "/app/static/js/main.8bd8ac26.chunk.js.map",
+    "runtime~main.js": "/app/static/js/runtime~main.d465ad9e.js",
+    "runtime~main.js.map": "/app/static/js/runtime~main.d465ad9e.js.map",
+    "static/js/2.01cf1e4e.chunk.js": "/app/static/js/2.01cf1e4e.chunk.js",
+    "static/js/2.01cf1e4e.chunk.js.map": "/app/static/js/2.01cf1e4e.chunk.js.map",
+    "index.html": "/app/index.html",
+    "precache-manifest.0c5448a6be1d0479a9085add28c5b8ad.js": "/app/precache-manifest.0c5448a6be1d0479a9085add28c5b8ad.js",
+    "service-worker.js": "/app/service-worker.js",
+    "static/css/main.4b64f5dc.chunk.css.map": "/app/static/css/main.4b64f5dc.chunk.css.map",
+    "static/media/kansas.gif": "/app/static/media/kansas.9e1ea4d3.gif",
+    "static/media/missing_header_banner.jpg": "/app/static/media/missing_header_banner.9732b8f3.jpg",
+    "static/media/missing_image.jpg": "/app/static/media/missing_image.db51dd39.jpg",
+    "static/media/movie-db-logo.svg": "/app/static/media/movie-db-logo.02a9430b.svg"
+  }
+}
