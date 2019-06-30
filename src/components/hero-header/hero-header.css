@@ -4,6 +4,17 @@
     background: radial-gradient(312.01px at 53.46% -21.35%, rgba(5, 112, 172, 0.46) 0%, rgba(8, 27, 35, 0) 100%);
 }
 
+.mdb-hero-header__overlay {
+    position: absolute;
+    height: 250px;
+    width: 100%;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-position: top center;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
 img.mdb-hero-header__logo {
     max-width: 66px;
     margin-bottom: 50px;

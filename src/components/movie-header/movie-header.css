@@ -1,6 +1,6 @@
 .mdb-movie-header {
     height: 245px;
     background-size: cover;
-    background-position: center;
+    background-position: top center;
     position: relative;
 }
