@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/app/static/css/main.4b64f5dc.chunk.css",
-    "main.js": "/app/static/js/main.1a877904.chunk.js",
-    "main.js.map": "/app/static/js/main.1a877904.chunk.js.map",
-    "runtime~main.js": "/app/static/js/runtime~main.d465ad9e.js",
-    "runtime~main.js.map": "/app/static/js/runtime~main.d465ad9e.js.map",
-    "static/js/2.01cf1e4e.chunk.js": "/app/static/js/2.01cf1e4e.chunk.js",
-    "static/js/2.01cf1e4e.chunk.js.map": "/app/static/js/2.01cf1e4e.chunk.js.map",
-    "index.html": "/app/index.html",
-    "precache-manifest.d83dcd42b956408cb440318a4b6260fc.js": "/app/precache-manifest.d83dcd42b956408cb440318a4b6260fc.js",
-    "service-worker.js": "/app/service-worker.js",
-    "static/css/main.4b64f5dc.chunk.css.map": "/app/static/css/main.4b64f5dc.chunk.css.map",
-    "static/media/kansas.gif": "/app/static/media/kansas.9e1ea4d3.gif",
-    "static/media/missing_header_banner.jpg": "/app/static/media/missing_header_banner.9732b8f3.jpg",
-    "static/media/missing_image.jpg": "/app/static/media/missing_image.db51dd39.jpg",
-    "static/media/movie-db-logo.svg": "/app/static/media/movie-db-logo.02a9430b.svg"
+    "main.css": "/static/css/main.f7a8f18d.chunk.css",
+    "main.js": "/static/js/main.398ee121.chunk.js",
+    "main.js.map": "/static/js/main.398ee121.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.02668868.chunk.js": "/static/js/2.02668868.chunk.js",
+    "static/js/2.02668868.chunk.js.map": "/static/js/2.02668868.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.b86825eaadf3fe7fe13671957715a24b.js": "/precache-manifest.b86825eaadf3fe7fe13671957715a24b.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.f7a8f18d.chunk.css.map": "/static/css/main.f7a8f18d.chunk.css.map",
+    "static/media/kansas.gif": "/static/media/kansas.9e1ea4d3.gif",
+    "static/media/missing_header_banner.jpg": "/static/media/missing_header_banner.9732b8f3.jpg",
+    "static/media/missing_image.jpg": "/static/media/missing_image.db51dd39.jpg",
+    "static/media/movie-db-logo.svg": "/static/media/movie-db-logo.02a9430b.svg"
   }
 }
