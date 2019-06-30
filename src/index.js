@@ -8,8 +8,8 @@ import './index.css'
 const routing = (
     <Router>
         <div>
-            <Route exact path="/" component={app} />
-            <Route path="/movie" component={MovieView} />
+            <Route exact path={process.env.PUBLIC_URL + '/'} component={app} />
+            <Route path={process.env.PUBLIC_URL + '/movie/:id'} component={MovieView} />
         </div>
     </Router>
 )

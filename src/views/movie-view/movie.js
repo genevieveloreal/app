@@ -21,10 +21,7 @@ class Movie extends React.Component {
   }
   
   componentDidMount() {
-    let path = window.location.pathname;
-    let urlRoute = "movie/";
-    let id = path.replace(urlRoute, '').substring(1);
-    let apiRequest = searchQuery + id + '?' + apiKey;
+    let apiRequest = searchQuery + this.props.match.params.id + '?' + apiKey;
     this.fetchData(apiRequest);
   }
 

@@ -19,7 +19,7 @@ class MovieCard extends React.Component {
     let releaseDate = moment(this.props.releaseDate, 'YYYY-MM-DD').format('MMMM YYYY');
 
     return (
-        <a href={`/movie/${this.props.id}`} className="mdb-movie-link" id={this.props.id}>
+        <a href={`${process.env.PUBLIC_URL}/movie/${this.props.id}`} className="mdb-movie-link" id={this.props.id}>
             <div className={`${baseClass} fade-in`}>
                 <div 
                     className={`${baseClass}__image`}
