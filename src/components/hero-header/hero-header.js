@@ -6,6 +6,10 @@ import './hero-header.css';
 const baseClass = "mdb-hero-header";
 
 class HeroHeader extends React.Component {
+  handleSubmit(event) {
+    event.preventDefault();
+  }
+
   render() {
     let divStyle = {
       backgroundImage: 'url(' + HeroBackground + ')'
@@ -17,7 +21,7 @@ class HeroHeader extends React.Component {
         </div>
         <header className={`${baseClass}`}>
             <img className={`${baseClass}__logo`} src={Logo} alt="Movie DB Logo"></img>
-            <form className={`${baseClass}__search-form`}>
+            <form className={`${baseClass}__search-form`} onSubmit={this.handleSubmit}>
                 {this.props.children}
             </form>
         </header>

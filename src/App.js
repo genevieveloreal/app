@@ -17,7 +17,8 @@ class App extends React.Component {
     this.state = {
       searchResults: [],
       searchTerm: '',
-      previousSearch: ''
+      previousSearch: '',
+      customSearch: false
     };
     this.handleSearch = this.handleSearch.bind(this);
   }
@@ -30,7 +31,8 @@ class App extends React.Component {
       apiRequest = searchQuery.concat(apiKey);
       this.setState({
         searchTerm: previousSearch,
-        previousSearch: previousSearch
+        previousSearch: previousSearch,
+        customSearch: true
       });
     } else {
       this.displayPopularMovies();
@@ -42,6 +44,9 @@ class App extends React.Component {
     searchQuery = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc";
     let apiRequest = searchQuery.concat(apiKey);
     this.fetchData(apiRequest);
+    this.setState({
+      customSearch: false
+    })
   }
 
   handleSearch(event) {
@@ -56,7 +61,8 @@ class App extends React.Component {
       searchQuery = `https://api.themoviedb.org/3/search/movie?query=${updatedSearchQueryString}`;
       localStorage.setItem("searchquery", updatedSearchQueryString);
       this.setState({
-        previousSearch: updatedSearchQueryString
+        previousSearch: updatedSearchQueryString,
+        customSearch: true
       });
       let apiRequest = searchQuery.concat(apiKey);
       this.fetchData(apiRequest);
@@ -85,18 +91,18 @@ class App extends React.Component {
               src={SearchIcon}
               alt="search icon"
             />
-            <input 
-              onKeyUp={this.handleSearch}
-              className={`${baseClass}__search-input`}
-              placeholder={this.state.previousSearch ? this.state.previousSearch : 'Search'}
-            >
-            </input>
+              <input 
+                onKeyUp={this.handleSearch}
+                className={`${baseClass}__search-input`}
+                placeholder={this.state.previousSearch ? this.state.previousSearch : 'Search'}
+              >
+              </input>
           </div>
         </HeroHeader>
 
         <div className={`${baseClass}__catalogue-container container`}>
           <h3 className="bold">
-            {this.state.searchResults ? 'Search results' : 'Popular Movies'}
+            {this.state.customSearch ? 'Search results' : 'Popular Movies'}
           </h3>
           <div className="row">
 
