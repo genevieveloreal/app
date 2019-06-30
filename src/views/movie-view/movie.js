@@ -9,7 +9,7 @@ import './movie-view.css';
 const baseClass = "mdb-single-view";
 const apiKey = "api_key=" + process.env.REACT_APP_MOVIE_DB_API_KEY;
 let searchResults = [];
-let searchQuery = "http://api.themoviedb.org/3/movie/"
+let searchQuery = "https://api.themoviedb.org/3/movie/"
 
 class Movie extends React.Component {
   constructor(props) {
