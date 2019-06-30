@@ -3,7 +3,7 @@ import HeroHeader from './components/hero-header/hero-header';
 import MovieCard from './components/movie-card/movie-card';
 import MovieCatalogueEmpty from './components/movie-catalogue-empty/movie-catalogue-empty';
 import Footer from './components/footer/footer';
-import SearchIcon from './search_icon.png';
+import SearchIcon from './images/search_icon.png';
 import './App.css';
 
 const baseClass = "mdb-app";
@@ -33,21 +33,34 @@ class App extends React.Component {
         previousSearch: previousSearch
       });
     } else {
-      apiRequest = searchQuery.concat(apiKey);
+      this.displayPopularMovies();
     }
+    this.fetchData(apiRequest);
+  }
+
+  displayPopularMovies() {
+    searchQuery = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc";
+    let apiRequest = searchQuery.concat(apiKey);
     this.fetchData(apiRequest);
   }
 
   handleSearch(event) {
     let updatedSearchQueryString = event.target.value;
     this.setState({searchTerm: updatedSearchQueryString});
-    searchQuery = `https://api.themoviedb.org/3/search/movie?query=${updatedSearchQueryString}`;
-    localStorage.setItem("searchquery", updatedSearchQueryString);
-    this.setState({
-      previousSearch: updatedSearchQueryString
-    });
-    let apiRequest = searchQuery.concat(apiKey);
-    this.fetchData(apiRequest);
+    if (updatedSearchQueryString === '') {
+      this.displayPopularMovies();
+      this.setState({
+        previousSearch: updatedSearchQueryString
+      });
+    } else {
+      searchQuery = `https://api.themoviedb.org/3/search/movie?query=${updatedSearchQueryString}`;
+      localStorage.setItem("searchquery", updatedSearchQueryString);
+      this.setState({
+        previousSearch: updatedSearchQueryString
+      });
+      let apiRequest = searchQuery.concat(apiKey);
+      this.fetchData(apiRequest);
+    }
   }
 
   fetchData(apiRequest) {
@@ -118,4 +131,4 @@ class App extends React.Component {
   }
 }
 
-export default App
+export default App;

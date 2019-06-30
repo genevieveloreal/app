@@ -1,5 +1,7 @@
 .mdb-movie-info-basic p {
+    font-family: 'Montserrat', sans-serif;
     color: #B8D8E6;
     font-size: 12px;
     margin-bottom: 0px;
+    line-height: 21px;
 }

@@ -1,14 +1,14 @@
 import React from 'react';
-import Logo from '../../../src/movie-db-logo.svg';
-import HeroBackground from '../../../src/movie_db_hero_bg_large.png';
+import Logo from '../../../src/images/movie-db-logo.svg';
+import HeroBackground from '../../../src/images/movie_db_hero_bg_large.png';
 import './hero-header.css';
 
 const baseClass = "mdb-hero-header";
 
 class HeroHeader extends React.Component {
   render() {
-    var divStyle = {
-      backgroundImage: 'url(' + HeroBackground + ')',
+    let divStyle = {
+      backgroundImage: 'url(' + HeroBackground + ')'
     };
 
     return (

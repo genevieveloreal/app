@@ -39,10 +39,12 @@ a.mdb-movie-link:hover  {
     color: #E6F7FF;
     font-family: 'Roboto', sans-serif;
     margin-bottom: 5px;
+    line-height: 16px;
 }
 
 .mdb-movie-card p {
     font-size: 12px;
+    line-height: 14px;
     color: #A1D1E6;
 }
 
@@ -64,21 +66,19 @@ a.mdb-movie-link:hover  {
     }
 }
 
-@media (max-width: 420px) {
-    .mdb-movie-card__image {
-        height: 240px;
-    }
-}
-
 @media (max-width: 410px) {
+    .mdb-movie-card {
+        width: 100%;
+    }
+    
     .mdb-movie-card__image {
-        height: 450px;
+        height: 233px;
     }
 }
 
-@media (max-width: 330px) {
+@media (max-width: 325px) {
     .mdb-movie-card__image {
-        height: 425px;
+        height: 440px;
     }
 }
 

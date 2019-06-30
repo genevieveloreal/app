@@ -3,7 +3,7 @@ import MovieHeader from '../../components/movie-header/movie-header';
 import MoviePoster from '../../components/movie-poster/movie-poster';
 import MovieInfoBasic from '../../components/movie-info-basic/movie-info-basic';
 import MovieOverview from '../../components/movie-overview/movie-overview';
-import WhiteArrowBackIcon from '../../../src/arrow_back_white.png';
+import WhiteArrowBackIcon from '../../../src/images/arrow_back_white.png';
 import './movie-view.css';
 
 const baseClass = "mdb-single-view";
@@ -45,34 +45,38 @@ class Movie extends React.Component {
 
   render() {
     return (
-      <div className={baseClass}>
-        { this.state.searchResults && 
-          <div className="container">
-            <MovieHeader background={searchResults.backdrop_path}>
-              <button
-                onClick={this.navigateBack}
-                className="mdb-back-button"
-              >
-                <img src={WhiteArrowBackIcon} alt="Go back"></img>
-                Go Back
-              </button>
-            </MovieHeader>
-            <div className={`${baseClass}__header-details`}>
-                <MoviePoster background={searchResults.poster_path}/>
-              <div className={`${baseClass}__header-info`}>
-                <h2 className="bold">{searchResults.original_title}</h2>
-                <MovieInfoBasic 
-                  releaseDate={searchResults.release_date}
-                  userRating={searchResults.vote_average}
-                  duration={searchResults.runtime}
-                />
-              </div>
-            </div>
-            <hr></hr>
-            <MovieOverview content={searchResults.overview}/>
-          </div>
+      <>
+        { this.state.searchResults &&
+          <MovieHeader background={searchResults.backdrop_path}>
+            <button
+              onClick={this.navigateBack}
+              className="mdb-back-button"
+            >
+              <img src={WhiteArrowBackIcon} alt="Go back"></img>
+              Go Back
+            </button>
+          </MovieHeader>
         }
-      </div>
+        <div className={baseClass}>
+          { this.state.searchResults && 
+            <div className="container">
+              <div className={`${baseClass}__header-details`}>
+                  <MoviePoster background={searchResults.poster_path}/>
+                <div className={`${baseClass}__header-info`}>
+                  <h2 className="bold">{searchResults.original_title}</h2>
+                  <MovieInfoBasic 
+                    releaseDate={searchResults.release_date}
+                    userRating={searchResults.vote_average}
+                    duration={searchResults.runtime}
+                  />
+                </div>
+              </div>
+              <hr></hr>
+              <MovieOverview content={searchResults.overview}/>
+            </div>
+          }
+        </div>
+      </>
     )
   }
 }

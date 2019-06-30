@@ -1,13 +1,14 @@
 import React from 'react';
+import moment from 'moment';
 import './movie-info-basic.css';
 
 const baseClass = "mdb-movie-info-basic";
 
 class MovieInfoBasic extends React.Component {
   render() {
-    let releaseYear = this.props.releaseDate.substring(0,4);
     let voteAverage = this.props.userRating * 10;
     let durationMins = this.props.duration;
+    let releaseYear = moment(this.props.releaseDate, 'YYYY-MM-DD').format('YYYY');
     /* Calculate duration in hours and minutes */
     let hours = Math.floor(durationMins / 60);
     let mins = durationMins % 60;

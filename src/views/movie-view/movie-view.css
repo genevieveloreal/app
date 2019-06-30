@@ -9,20 +9,25 @@
 
 .mdb-single-view .mdb-movie-poster {
     position: absolute;
-    top: 180px;
+    top: -65px;
     left: 45px;
 }
 
 .mdb-single-view__header-details {
     width: 100%;
-    height: 150px;
+    height: auto;
+    min-height: 150px;
 }
 
 .mdb-single-view__header-info {
     margin-left: 200px;
-    padding-top: 30px;
+    padding-top: 25px;
     padding-right: 15px;
-    margin-bottom: 70px;
+}
+
+.mdb-single-view__header-info h2 {
+    line-height: 30px;
+    margin-bottom: 15px;
 }
 
 .mdb-single-view .mdb-movie-overview {
@@ -30,6 +35,10 @@
 }
 
 @media (max-width: 992px) {
+    /* .mdb-single-view__header-details {
+        margin-bottom: 70px;
+    } */
+
     .mdb-single-view__header-info {
         margin-bottom: 40px;
     }
@@ -63,5 +72,6 @@
 @media (max-width: 375px) {
     .mdb-single-view__header-info h2 {
         font-size: 20px;
+        line-height: 25px;
     }
 }

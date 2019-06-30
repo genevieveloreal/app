@@ -1,4 +1,12 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Simple Movie Search App
+
+A simple single page application which allows users to search for their favourite films.
+
+This project uses:
+* [Create React App](https://github.com/facebook/create-react-app)
+* [React Router](https://www.npmjs.com/package/react-router)
+* [Moment](https://www.npmjs.com/package/moment)
+* [TMDP API](https://developers.themoviedb.org/3)
 
 ## Available Scripts
 
