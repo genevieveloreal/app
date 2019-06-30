@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Route, BrowserRouter as Router } from 'react-router-dom'
-import './index.css'
 import app from './App'
 import MovieView from './views/movie-view/movie'
+import './index.css'
 
 const routing = (
     <Router>
